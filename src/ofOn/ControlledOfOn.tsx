@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 
 type OnPropsType = {
     value: boolean
-    onClick: (value: boolean) => void
+    onChange: (value: boolean) => void
 }
 
 function ControlledOnOf(props: OnPropsType) {
@@ -35,8 +35,14 @@ function ControlledOnOf(props: OnPropsType) {
     }
 
     return <div>
-        <div style={onStyle} onClick={()=>{props.onClick(true)}}>On</div>
-        <div style={offStyle} onClick={()=>{props.onClick(false)}}>Of</div>
+        <div style={onStyle} onClick={() => {
+            props.onChange(true)
+        }}>On
+        </div>
+        <div style={offStyle} onClick={() => {
+            props.onChange(false)
+        }}>Of
+        </div>
         <div style={indicatorStyle}></div>
     </div>
 }

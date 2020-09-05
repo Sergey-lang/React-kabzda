@@ -1,12 +1,12 @@
 import React, {useState} from 'react';
 
 type OnPropsType = {
-    // on: boolean
+    onChange: (on: boolean) => void
 }
 
-function OnOf(props: OnPropsType) {
+function UncontrolOnOf(props: OnPropsType) {
     console.log('onOff rendering')
-    let [on,setOn] = useState (false);
+    let [on, setOn] = useState(false);
 
     const onStyle = {
         width: '30px',
@@ -35,12 +35,23 @@ function OnOf(props: OnPropsType) {
         backgroundColor: on ? 'green' : 'red',
     }
 
+    const onClicked = () => {
+        setOn(true)
+        props.onChange(true)
+    }
+    const offClicked = () => {
+        setOn(false)
+        props.onChange(false)
+    }
+
     return <div>
-        <div style={onStyle} onClick={()=>{setOn(true)}}>On</div>
-        <div style={offStyle} onClick={()=>{setOn(false)}}>Of</div>
+        <div style={onStyle} onClick={onClicked}>On
+        </div>
+        <div style={offStyle} onClick={offClicked}>Of
+        </div>
         <div style={indicatorStyle}></div>
     </div>
 }
 
-export default OnOf
+export default UncontrolOnOf
 
