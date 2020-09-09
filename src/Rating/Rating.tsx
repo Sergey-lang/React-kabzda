@@ -13,7 +13,7 @@ type StarPropsType = {
     value: RatingValueType
 }
 
-function Rating(props: PropsType) {
+export function Rating(props: PropsType) {
     return (
         <div>
             <Star selected={props.value > 0} onClick={props.onClick} value={1}/>
@@ -30,5 +30,3 @@ function Star(props: StarPropsType) {
         props.onClick(props.value)
     }}>{props.selected ? <b>star </b> : 'star '}</span>
 }
-
-export default Rating

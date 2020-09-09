@@ -1,11 +1,10 @@
 import React, {useState} from 'react';
+import {Accordion} from './Accordion/Accordion';
+import {UncontroledOnOf} from './UncontroledOnOf/UncontroledOnOf';
 import './App.css';
-import Accordion from './Accordion/Accordion';
-import Rating, {RatingValueType} from './Accordion/Rating';
-import ControlledOnOf from './ofOn/ControlledOfOn';
-import UncontrolOnOf from './ofOn/UncontrolOfOn';
+import {RatingValueType, Rating} from './Rating/Rating';
 
-function App() {
+export function App() {
 
     let [collapsedValue, setCollapsed] = useState<boolean>(true)
     let [onOf, setOnOf] = useState<boolean>(true)
@@ -14,12 +13,7 @@ function App() {
     return (
         <div className={'App'}>
             <hr/>
-            <UncontrolOnOf onChange={setOnOf}/>{onOf.toString()}
-            <hr/>
-            {/*<ControlledOnOf value={onOf} onChange={setOnOf}/>*/}
-            {/*<UncontrolledAccordion titleValue={'Uncontrol Accordion'}/>*/}
-            <hr/>
-            {/*<UncontroledRating/>*/}
+            <UncontroledOnOf onChange={setOnOf}/>{onOf.toString()}
             <hr/>
             <Accordion titleValue={'Control Accordion'} onClick={() => {
                 setCollapsed(!collapsedValue)
@@ -40,4 +34,3 @@ function PageTitle(props: PageTitlePropsType) {
     );
 }
 
-export default App;
