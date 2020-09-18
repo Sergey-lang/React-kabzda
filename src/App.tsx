@@ -15,9 +15,9 @@ export function App() {
             <hr/>
             <UncontroledOnOf onChange={setOnOf}/>{onOf.toString()}
             <hr/>
-            <Accordion titleValue={'Control Accordion'} onClick={() => {
-                setCollapsed(!collapsedValue)
-            }} value={collapsedValue}/>
+            {/*<Accordion titleValue={'Control Accordion'} onChange={() => {*/}
+            {/*    setCollapsed(!collapsedValue)*/}
+            {/*}} value={collapsedValue}/>*/}
             <hr/>
             <Rating value={ratingValue} onClick={setRatingValue}/>
         </div>
