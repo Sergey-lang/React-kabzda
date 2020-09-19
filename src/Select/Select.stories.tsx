@@ -8,18 +8,31 @@ export default {
     component: Select,
 }
 
+const valueChanged = action('value changet')
 
-export const ChoseItemFromList: React.FC = () => {
-    let [value, setValue] = useState<number>(2)
-    return <Select value={value}
-                   onChange={(itemValue: number) => {
-                       setValue(itemValue)
-                   }}
-                   items={[
-                       {title: 'Egor', value: 1},
-                       {title: 'Anna', value: 2},
-                       {title: 'Stas', value: 3},
-                       {title: 'Misha', value: 4}]}/>
+
+export const WithValue: React.FC = () => {
+    const [value, setValue] = useState('2')
+    return (
+        <Select value={value} onChange={setValue} items={[
+            {title: 'Moscow', value: '1'},
+            {title: 'Kiev', value: '2'},
+            {title: 'Minsk', value: '3'},]
+        }/>
+    )
+}
+
+
+export const WithoutValue: React.FC = () => {
+    const [value, setValue] = useState(null)
+
+    return (
+        <Select value={value} onChange={setValue} items={[
+            {title: 'Moscow', value: '1'},
+            {title: 'Kiev', value: '2'},
+            {title: 'Minsk', value: '3'},]
+        }/>
+    )
 }
 
 
