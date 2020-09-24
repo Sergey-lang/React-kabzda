@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import {Accordion} from './Accordion/Accordion';
 import {UncontroledOnOf} from './UncontroledOnOf/UncontroledOnOf';
 import './App.css';
@@ -9,6 +9,10 @@ export function App() {
     let [collapsedValue, setCollapsed] = useState<boolean>(true)
     let [onOf, setOnOf] = useState<boolean>(true)
     let [ratingValue, setRatingValue] = useState<RatingValueType>(4)
+    let[count,setState] = useState(0)
+    useEffect(()=>{
+        document.title = `you cliked ${count} times`
+    })
 
     return (
         <div className={'App'}>
@@ -20,6 +24,8 @@ export function App() {
             {/*}} value={collapsedValue}/>*/}
             <hr/>
             <Rating value={ratingValue} onClick={setRatingValue}/>
+            <button onClick={()=>setState(count+1)}>click</button>
+            <div>{count}</div>
         </div>
     );
 }
