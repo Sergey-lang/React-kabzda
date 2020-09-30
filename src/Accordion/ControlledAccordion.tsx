@@ -13,7 +13,7 @@ type AccordionPropsType = {
     items: ItemType[]
 }
 
-export function Accordion(props: AccordionPropsType) {
+export function ControlledAccordion(props: AccordionPropsType) {
     return (
         <div className="App">
             <AccordionTitle title={props.titleValue}
@@ -47,7 +47,9 @@ function AccordionBody(props: AccordionBodyPropsType) {
     return (
         <ul>
             {props.items.map((i, index) =>
-                <li onClick={() => {props.onClick(i.value)}} key={index}>{i.title}</li>)}
+                <li onClick={() => {
+                    props.onClick(i.value)
+                }} key={index}>{i.title}</li>)}
         </ul>
     );
 }

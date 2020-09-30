@@ -13,7 +13,7 @@ type StarPropsType = {
     value: RatingValueType
 }
 
-export function Rating(props: PropsType) {
+export function ControlledRating(props: PropsType) {
     return (
         <div>
             <Star selected={props.value > 0} onClick={props.onClick} value={1}/>
