@@ -2,12 +2,12 @@ import React, {useState} from 'react';
 
 export type RatingValueType = 0 | 1 | 2 | 3 | 4 | 5;
 
-type RatingPtropsType = {
+type RatingPropsType = {
     defaultValue?: RatingValueType
     onChange: (value: RatingValueType) => void
 }
 
-export function UncontroledRating(props: RatingPtropsType) {
+export function UncontroledRating(props: RatingPropsType) {
     let [value, setSelect] = useState<RatingValueType>(props.defaultValue ? props.defaultValue : 0)
     return (
         <div>
@@ -40,8 +40,11 @@ type StarPropsType = {
     setSelect: () => void
 }
 
-function Star(props: StarPropsType) {
+function StarItem(props: StarPropsType) {
     return <span onClick={() => {
         props.setSelect()
     }}>{props.selected ? <b>start </b> : 'star '}</span>
 }
+
+const Star = React.memo(StarItem)
+

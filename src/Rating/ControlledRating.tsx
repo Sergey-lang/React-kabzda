@@ -25,8 +25,10 @@ export function ControlledRating(props: PropsType) {
     )
 }
 
-function Star(props: StarPropsType) {
+function StarItem(props: StarPropsType) {
     return <span onClick={() => {
         props.onClick(props.value)
     }}>{props.selected ? <b>star </b> : 'star '}</span>
 }
+
+const Star = React.memo(StarItem)
