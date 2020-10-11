@@ -1,9 +1,13 @@
 import React, {useState, KeyboardEvent, useEffect} from 'react';
 import s from './Select.module.css'
+import {UsersSecret} from '../stories/UseMemo.stories';
 
-type ItemType = {
+
+export type ItemType = {
     title: string
     value: any
+    population: number
+    cities:Array<string>
 }
 
 type SelectPropsType = {
@@ -13,6 +17,7 @@ type SelectPropsType = {
 }
 
 export const Select: React.FC<SelectPropsType> = (props) => {
+    console.log('Select rerender')
 
     const [active, setActive] = useState(false)
     const [hoveredElementValue, setHoveredElement] = useState(props.value)
@@ -23,6 +28,7 @@ export const Select: React.FC<SelectPropsType> = (props) => {
     useEffect(() => {
         setHoveredElement(props.value);
     }, [props.value])
+
 
     const toggleItems = () => {
         setActive(!active)
