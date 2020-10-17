@@ -1,10 +1,9 @@
 import React, {useMemo, useState} from 'react';
-
+import {log} from 'util';
 
 export default {
-    title: 'React.UseMemo demo',
+    title: 'React.useMemo',
 }
-
 
 export const DifficultCountingExampleUseMemo = () => {
     const [a, setA] = useState<number>(5)
@@ -26,7 +25,6 @@ export const DifficultCountingExampleUseMemo = () => {
         return tempResultA
     }, [a])
 
-
     for (let i = 1; i <= b; i++) {
         resultB = resultB * i
     }
@@ -43,9 +41,10 @@ export const DifficultCountingExampleUseMemo = () => {
 
 export const UsersSecret = (props: { users: Array<string> }) => {
     console.log('Users Secret')
+
     return <div>{
         props.users.map((u, i) =>
-        <div key={i}>{u}</div>)
+            <div key={i}>{u}</div>)
     }</div>
 }
 
@@ -53,21 +52,22 @@ const Users = React.memo(UsersSecret)
 
 export const HelpsToReactMemo = () => {
     console.log('Help to react memo')
+
     const [counter, setCounter] = useState(0)
-    const [users, setUsers] = useState(['Egor', 'Sveta', 'Stas', 'Dima'])
+    const [users, setUsers] = useState(['Egor', 'Mike', 'Nikol', 'David'])
 
-    const newArray = useMemo(()=>{
-        return users.filter(u => u.toLocaleLowerCase().indexOf('a') > - 1)
-    },[users])
+    const newArray = useMemo(() => {
+        return users.filter(u => u.toLocaleLowerCase().indexOf('a') > -1)
+    }, [users])
 
-    const addUser = () => {
+    let addUser = () => {
         const newUsers = [...users, 'Sveta' + new Date().getTime()]
         setUsers(newUsers)
     }
 
     return <>
-        <button onClick={() => addUser}>add user</button>
-        <button onClick={() => setCounter(counter + 1)}>+</button>
+        <button onClick={() => addUser() }>Add user</button>
+        <button onClick={() => setCounter(counter + 1)}>Counter +</button>
         {counter}
         <Users users={newArray}/>
     </>

@@ -9,7 +9,7 @@ export default {
 
 const SelectM = React.memo(Select)
 export const SelectMemoHelp: React.FC = () => {
-    console.log('SelectMemoHelp rerender')
+    console.log('Select Memo Help rerender')
 
     const countriesArray = [
         {title: 'RU', value: 25618, population: 1000000, cities: ['Москва', 'СПБ']},
@@ -24,21 +24,25 @@ export const SelectMemoHelp: React.FC = () => {
     const [counter, setCounter] = useState(0)
     const [countries, setCountry] = useState(countriesArray)
 
-    let newArray = countries.filter(c => {
-        for(let i = 0; i <= c.cities.length; i++) {
-            if(c.cities[i] === 'Шанхай') {
-                return c.cities[i]
+    let newArray = useMemo(() => {
+        console.log('Activated counties dependency')
+
+        return countries.filter(c => {
+            for (let i = 0; i <= c.cities.length; i++) {
+                if (c.cities[i] === 'Шанхай') {
+                    return c.cities[i]
+                }
             }
-        }
-    })
+        })
+    }, [countries])
 
     return (
         <>
-            <div>{countries.map((el,i )=> <p key={i}>{el.title}</p>)}</div>
-            <button onClick={ ()=>setCounter(counter + 1) }>Simple counter</button>
+            <div>{countries.map((el, i) => <p key={i}>{el.title}</p>)}</div>
+            <button onClick={() => setCounter(counter + 1)}>Simple counter</button>
             {counter}
-            <button onClick={ ()=>setCountry(newArray) }>Find Shanghai</button>
-            <button onClick={ ()=>setCountry(countriesArray) }>All countries</button>
+            <button onClick={() => setCountry(newArray)}>Find Shanghai</button>
+            <button onClick={() => setCountry(countriesArray)}>All countries</button>
             <SelectM value={value} onChange={setValue} items={countries}/>
         </>
     )
