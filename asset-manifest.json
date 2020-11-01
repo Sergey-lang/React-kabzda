@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/React-kabzda/static/css/main.a187aa0b.chunk.css",
-    "main.js": "/React-kabzda/static/js/main.197dcbb8.chunk.js",
-    "main.js.map": "/React-kabzda/static/js/main.197dcbb8.chunk.js.map",
+    "main.js": "/React-kabzda/static/js/main.da50b6e5.chunk.js",
+    "main.js.map": "/React-kabzda/static/js/main.da50b6e5.chunk.js.map",
     "runtime-main.js": "/React-kabzda/static/js/runtime-main.a024a2bb.js",
     "runtime-main.js.map": "/React-kabzda/static/js/runtime-main.a024a2bb.js.map",
     "static/js/2.36012bbc.chunk.js": "/React-kabzda/static/js/2.36012bbc.chunk.js",
     "static/js/2.36012bbc.chunk.js.map": "/React-kabzda/static/js/2.36012bbc.chunk.js.map",
     "index.html": "/React-kabzda/index.html",
-    "precache-manifest.286c88696f7873bc5fa14faa4e0f8325.js": "/React-kabzda/precache-manifest.286c88696f7873bc5fa14faa4e0f8325.js",
+    "precache-manifest.688b9d8e8f33fc4d620f9e5709db9749.js": "/React-kabzda/precache-manifest.688b9d8e8f33fc4d620f9e5709db9749.js",
     "service-worker.js": "/React-kabzda/service-worker.js",
     "static/css/main.a187aa0b.chunk.css.map": "/React-kabzda/static/css/main.a187aa0b.chunk.css.map",
     "static/js/2.36012bbc.chunk.js.LICENSE.txt": "/React-kabzda/static/js/2.36012bbc.chunk.js.LICENSE.txt"
@@ -17,6 +17,6 @@
     "static/js/runtime-main.a024a2bb.js",
     "static/js/2.36012bbc.chunk.js",
     "static/css/main.a187aa0b.chunk.css",
-    "static/js/main.197dcbb8.chunk.js"
+    "static/js/main.da50b6e5.chunk.js"
   ]
 }

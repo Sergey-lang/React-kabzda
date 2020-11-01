@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "af5ef472e76e8c63acc07e5710d4077f",
+    "revision": "5dc8ee8ee350d359acc191b5f8d33046",
     "url": "/React-kabzda/index.html"
   },
   {
-    "revision": "ce987d3ad85a1de9fbdc",
+    "revision": "755dac0f74b26c3b4934",
     "url": "/React-kabzda/static/css/main.a187aa0b.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/React-kabzda/static/js/2.36012bbc.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "ce987d3ad85a1de9fbdc",
-    "url": "/React-kabzda/static/js/main.197dcbb8.chunk.js"
+    "revision": "755dac0f74b26c3b4934",
+    "url": "/React-kabzda/static/js/main.da50b6e5.chunk.js"
   },
   {
     "revision": "f9c32cf8784a674779b1",
