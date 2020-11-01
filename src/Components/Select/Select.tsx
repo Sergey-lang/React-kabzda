@@ -1,6 +1,6 @@
 import React, {useState, KeyboardEvent, useEffect} from 'react';
 import s from './Select.module.css'
-import {UsersSecret} from '../ReactUseMemo/UseMemoUseCallback.stories';
+import {UsersSecret} from '../../ReactUseMemo/UseMemoUseCallback.stories';
 
 
 export type ItemType = {

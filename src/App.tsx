@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
-import {UncontroledOnOf} from './UncontroledOnOf/UncontroledOnOf';
+import {UncontroledOnOf} from './Components/UncontroledOnOf/UncontroledOnOf';
 import './App.css';
-import {ControlledRating, RatingValueType} from './Rating/ControlledRating';
+import {ControlledRating, RatingValueType} from './Components/Rating/ControlledRating';
 
 export function App() {
 
