@@ -15,7 +15,7 @@ export const Clock: React.FC<PropsType> = (props) => {
         }, 1000)
 
         return () => {
-            // clearInterval(intervalId)
+            clearInterval(intervalId)
         }
     }, [])
 
